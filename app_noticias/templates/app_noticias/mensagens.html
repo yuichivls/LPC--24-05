@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>MensagemDeContato - Django</title>
+    </head>
+    <body>
+        <h1>Mensagens De Contato</h1>
+        {% for mensagem in object_list %}
+            <div class="mensagens">
+                <h2>{{ mensagem.mensagem }}</h2>
+                <p>{{mensagem.nome}}</p>
+                <p>-------------------------------------------------------------------------------</p>
+            </div>
+        {% endfor %}
+    </body>
+</html>

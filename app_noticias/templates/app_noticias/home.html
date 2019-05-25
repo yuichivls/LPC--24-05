@@ -1,0 +1,26 @@
+{% if user.is_authenticated %}
+    <p class="logged-in-p">
+        Olá {{ user.username }} seja bem vindo, o que você quer doido?
+        <span class="sair"><a href="{% url 'logout' %}">Sair</a></span>
+    </p>
+{% endif %}
+<p>
+
+    
+</p>
+
+<html>
+    <head>
+        <title>Noticias - Django</title>
+    </head>
+    <body>
+        <h1>Noticias</h1>
+        {% for noticia in object_list %}
+	    {% if noticia.publicado %}
+            <div class="noticia">
+                <h2><a href="/noticia/{{ noticia.pk }}">{{ noticia.titulo }}</a></h2>
+            </div>
+	    {% endif %}
+        {% endfor %}
+    </body>
+</html>
